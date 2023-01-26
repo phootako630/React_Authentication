@@ -11,11 +11,11 @@ export const Routes = () => {
                 <PrivateRoute path="/" exact>
                     <UserInfoPage />
                 </PrivateRoute>
-                <PrivateRoute path="/login">
-                    <LoginPage></LoginPage>
-                </PrivateRoute>
+                <Route path="/login">
+                    <LoginPage />
+                </Route>
                 <Route path="/signup">
-                    <SignUpPage></SignUpPage>
+                    <SignUpPage />
                 </Route>
             </Switch>
         </Router>

@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 export const signUpRoute = {
-    path: 'api/signup',
+    path: '/api/signup',
     method: 'post',
     handler: async (req, res) => {
         const {email, password} = req.body;

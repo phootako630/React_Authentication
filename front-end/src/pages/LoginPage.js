@@ -1,7 +1,10 @@
 import {useState} from "react";
 import {useHistory} from "react-router-dom";
+import axios from "axios";
+import {useToken} from "../auth/useToken";
 
 export const LoginPage = () => {
+    const [token, setToken] = useToken();
     const [errorMessage, setErrorMessage] = useState('');
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
@@ -9,7 +12,13 @@ export const LoginPage = () => {
     const history = useHistory();
 
     const onLogInClicked = async () => {
-        alert('LOG IN UNDER BUILDING')
+        const response = await axios.post('/api/login', {
+            email: emailValue,
+            password: passwordValue,
+        });
+        const { token } = response.data;
+        setToken(token);
+        history.push('/');
     }
 
     return (

@@ -21,5 +21,5 @@ export const useUser = () => {
            setUser(getPayloadFromToken(token));
        }
     }, [token]);
-
+    return user;
 }
