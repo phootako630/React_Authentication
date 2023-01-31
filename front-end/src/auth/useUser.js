@@ -2,6 +2,7 @@ import {useToken} from "./useToken";
 import {useEffect, useState} from "react";
 
 export const useUser = () => {
+
     const[token] = useToken();
 
     const getPayloadFromToken = token => {
@@ -21,5 +22,6 @@ export const useUser = () => {
            setUser(getPayloadFromToken(token));
        }
     }, [token]);
-    return user;
+
+    return [user, setUser];
 }
