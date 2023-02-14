@@ -1,15 +1,17 @@
 import {useHistory} from "react-router-dom";
 import {useEffect} from "react";
+import {useQueryParams} from "../util/useQueryParams";
 
 export const PleaseVerifyEmailPage = () => {
 
   const history = useHistory();
+  const { email } = useQueryParams();
 
     useEffect(() => {
         setTimeout(() => {
-            history.push('/');
+            history.push(`/verify-email?email=${encodeURI(email)}`);
         }, 3000);
-    }, [history]);
+    }, [history, email]);
 
 
   return (
