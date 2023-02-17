@@ -5,7 +5,6 @@ global.fetch = nodeFetch;
 
 AWS.config.region = process.env.AWS_REGION;
 AWS.config.credentials = new CognitoIdentityCredentials({
-    IdentityId: process.env.AWS_IDENTITY_ID,
     IdentityPoolId: process.env.AWS_IDENTITY_POOL_ID,
 });
 const poolData = {
