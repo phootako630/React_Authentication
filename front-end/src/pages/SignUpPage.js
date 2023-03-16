@@ -13,7 +13,7 @@ export const SignUpPage = () => {
     const history = useHistory();
 
     const onSignUpClicked = async () => {
-        const response = await axios.post('/api/signup', {
+        const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/signup`, {
             email: emailValue,
             password: passwordValue,
         });

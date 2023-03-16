@@ -38,7 +38,7 @@ export const UserInfoPage = () => {
 
     const saveChanges = async () => {
         try {
-            const response = await axios.put(`/api/user/${id}`, {
+            const response = await axios.put(`${process.env.REACT_APP_API_BASE_URL}/api/user/${id}`, {
                 favoriteFood,
                 hairColor,
                 bio,

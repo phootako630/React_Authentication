@@ -15,7 +15,7 @@ export const PasswordResetLandingPage = () => {
 
    const onResetClicked = async () => {
        try {
-           await axios.put(`/api/users/${passwordResetCode}/reset-password`, { email, newPassword: passwordValue });
+           await axios.put(`${process.env.REACT_APP_API_BASE_URL}/api/users/${passwordResetCode}/reset-password`, { email, newPassword: passwordValue });
            setIsSuccess(true);
        } catch (e) {
            setIsFailure(true);
