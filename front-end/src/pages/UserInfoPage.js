@@ -56,9 +56,12 @@ export const UserInfoPage = () => {
     }
 
     const logOut = () => {
-       localStorage.removeItem('token');
+        const clientId =process.env.AWS_CLIENT_ID;
+        const logoutUrl = `https://myauthenticationproject.auth.us-east-1.amazoncognito.com/logout?client_id=${clientId}&logout_uri=https://react-oauth-page.herokuapp.com/logout_callback`;
+
+        localStorage.removeItem('token');
        setUser(null);
-       history.push('/login');
+        window.location.assign(logoutUrl);
     }
     
     const resetValues = () => {
