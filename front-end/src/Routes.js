@@ -10,6 +10,7 @@ import {PasswordResetLandingPage} from "./pages/PasswordResetLandingPage";
 import {EmailVerificationCodePage} from "./pages/EmailVerificationCodePage";
 
 export const Routes = () => {
+    console.log('Rendering Routes');
     return (
         <Router>
             <Switch>
