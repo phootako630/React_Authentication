@@ -3,6 +3,7 @@ import {useUser} from './useUser';
 
 export const PrivateRoute = props => {
     const user = useUser();
+    console.log('User:', user)
     
     if( !user ) return <Redirect to="/login" />
 
