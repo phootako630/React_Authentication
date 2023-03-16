@@ -13,7 +13,7 @@ export const LoginPage = () => {
     const [googleOAuthUrl, setGoogleOAuthUrl] = useState('');
     const { token: oauthToken } = useQueryParams();
     const history = useHistory();
-
+    console.log('Rendering Routes');
     useEffect(() => {
         if (oauthToken) {
             setToken(oauthToken);
