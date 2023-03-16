@@ -1,6 +1,7 @@
 import {getDbConnection} from "../db";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import {v4 as uuid} from "uuid";
 
 export const loginRoute = {
     path: '/api/login',
@@ -13,9 +14,11 @@ export const loginRoute = {
 
         if (!user) return res.sendStatus(401);
 
-        const {_id: id, isVerified, passwordHash, info } = user;
 
-        const isCorrect = await bcrypt.compare(password, passwordHash);
+        const {_id: id, isVerified, passwordHash, salt, info } = user;
+        const pepper = process.env.PEPPER_STRING;
+
+        const isCorrect = await bcrypt.compare(salt + password + pepper, passwordHash);
 
         if (isCorrect) {
             jwt.sign({ id, isVerified, email, info }, process.env.JWT_SECRET,
