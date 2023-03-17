@@ -11,13 +11,13 @@ export const useUser = () => {
     }
 
     const [user, setUser] = useState(() => {
-        if(!token) return null;
+        if(!token) return { id: null };
         return getPayloadFromToken(token);
     });
 
     useEffect(() => {
        if (!token) {
-           setUser(null);
+           setUser( { id: null } );
        } else {
            setUser(getPayloadFromToken(token));
        }

@@ -99,6 +99,8 @@ export const UserInfoPage = () => {
             <button onClick={saveChanges}>Save Changes</button>
             <button onClick={resetValues}>Reset Values</button>
             <button onClick={logOut}>Log Out</button>
+
         </div>
+
     );
 }
