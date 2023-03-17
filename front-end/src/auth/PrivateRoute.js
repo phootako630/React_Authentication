@@ -7,5 +7,5 @@ export const PrivateRoute = props => {
     
     if( !user ) return <Redirect to="/login" />
 
-    return <Route {...props} />
+    return user.id ? <Route {...props} /> : null;
 }
