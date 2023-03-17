@@ -1,11 +1,22 @@
 import express from 'express';
 import { routes } from './routes';
+import cors from 'cors';
 import { initializeDbConnection } from './db';
 
 const PORT = process.env.PORT || 8080;
 
 const app = express();
 
+app.use(
+    cors({
+        origin: [
+            "https://react-authentication-phootako630.vercel.app",
+            "https://react-authentication-git-awscognitoauth-phootako630.vercel.app",
+            "https://react-authentication-five.vercel.app"
+            // Add more domains as needed
+        ],
+    })
+);
 // This allows us to access the body of POST/PUT
 // requests in our route handlers (as req.body)
 app.use(express.json());
