@@ -2,6 +2,12 @@ import express from 'express';
 import { routes } from './routes';
 import cors from 'cors';
 import { initializeDbConnection } from './db';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+// The rest of your code
+
 
 const PORT = process.env.PORT || 8080;
 
