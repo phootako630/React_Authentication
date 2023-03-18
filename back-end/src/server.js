@@ -12,7 +12,8 @@ app.use(
         origin: [
             "https://react-authentication-phootako630.vercel.app",
             "https://react-authentication-git-awscognitoauth-phootako630.vercel.app",
-            "https://react-authentication-five.vercel.app"
+            "https://react-authentication-five.vercel.app",
+            "https://react-authentication-n5xugd1dk-phootako630.vercel.app"
             // Add more domains as needed
         ],
     })
