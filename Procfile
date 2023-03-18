@@ -1,1 +1,1 @@
-web: node -r dotenv/config dist/server.js
+web: node -r dotenv/config.js dist/server.js
