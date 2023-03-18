@@ -1,1 +1,1 @@
-web: node back-end/src/server.js
+web: node -r dotenv/config dist/server.js
